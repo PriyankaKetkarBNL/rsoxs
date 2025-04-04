@@ -1,7 +1,7 @@
 from nbs_bl.plans.maximizers import fly_max
 from bluesky.preprocessors import finalize_wrapper
 import bluesky.plan_stubs as bps
-from nbs_bl.hw import shutter_control, shutter_enable
+from nbs_bl.hw import shutter_control, shutter_enable, shutter_y
 import numpy as np
 
 
@@ -103,6 +103,8 @@ def rsoxs_fly_max(
     direction = 1
 
     def _cleanup():
+        ## 20250403 - Temporary changes because shutter does not work
+        #yield from bps.mv(shutter_y, 25) ## Shutter mechanism physically blocks beam rather than the piezo portion
         yield from bps.mv(shutter_control, 0)
 
     for velocity in velocities:
@@ -111,8 +113,11 @@ def rsoxs_fly_max(
         stop -= rb_offset
         print(f"starting scan from {start} to {stop} at {velocity}")
         if open_shutter:
+            ## 20250403 - Temporary changes because shutter does not work
+            #yield from bps.mv(shutter_y, 26) ## Shutter mechanism physically lets beam pass rather than the piezo portion
             yield from bps.mv(shutter_enable, 0)
             yield from bps.mv(shutter_control, 1)
+            
         signal_dict = yield from finalize_wrapper(
             fly_max(
                 detectors,

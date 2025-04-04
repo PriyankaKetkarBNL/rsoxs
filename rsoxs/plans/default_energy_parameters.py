@@ -17,6 +17,13 @@ energyListParameters = {
     "calciumL_NEXAFS":  (320, 345, 0.9, 355, 0.15, 380, 0.9), ## Intended to recreate edge=(320, 345, 355, 380), ratios=(5, 1, 5), frames=112
     "ironL_NEXAFS":  (680, 700, 2, 730, 0.35, 780, 2), ## Intended to recreate edge=(680,700,730,780), ratios=(5, 1, 5), frames=112
     "zincL_NEXAFS":  (1000, 1015, 1.5, 1035, 0.3, 1085, 1.45), ## Intended to recreate edge=(1000, 1015, 1035, 1085), ratios=(5, 1, 5), frames=112
+    
+
+    "carbon_NEXAFS_WSU":  (270, 278, 1, 283, 0.5, 291.5, 0.05, 300, 0.5, 330, 1, 350, 4), ## WSU NEXAFS for Brian Collins group
+    "carbon_NEXAFS_ReallySlow":  (250, 282, 0.3, 297, 0.07, 350, 0.3),
+    "carbon_NEXAFS_Slow":  (250, 282, 0.3, 297, 0.1, 350, 0.3),
+    #"carbon_NEXAFS_reverse":  (350, 297, -1.45, 282, -0.3, 250, -1.45),
+
 
     "carbon_RSoXS":  (250, 270, 5, 282, 1, 287, 0.1, 292, 0.2, 305, 1, 350, 5), ## Intended to recreate edge=(250, 270, 282, 287, 292, 305, 350), ratios=(5, 1, 0.1, 0.2, 1, 5), frames=112
     "nitrogen_RSoXS":  (380, 397, 0.3, 407, 0.1, 440, 0.3), ## Intended to recreate edge=(380, 397, 407, 440), ratios=(2, 0.2, 2), frames=112
@@ -30,7 +37,9 @@ energyListParameters = {
     "ironL_RSoXS":  (680, 700, 3.3, 730, 0.3, 780, 3.3), ## Intended to recreate edge=(680,700,730,780), ratios=(2, 0.2, 2), frames=112
     "zincL_RSoXS":  (1000, 1015, 2.5, 1035, 0.2, 1085, 2.35), ## Intended to recreate edge=(1000, 1015, 1035, 1085), ratios=(2, 0.2, 2), frames=112
 
-    "carbon_NEXAFS_WSU":  (270, 278, 1, 283, 0.5, 291.5, 0.05, 300, 0.5, 330, 1, 350, 4), ## WSU NEXAFS for Brian Collins group
+    #"carbon_NEXAFS_WSU":  (270, 278, 1, 283, 0.5, 291.5, 0.05, 300, 0.5, 330, 1, 350, 4), ## WSU NEXAFS for Brian Collins group
+    #"carbon_NEXAFS_ReallySlow":  (250, 282, 0.3, 297, 0.07, 350, 0.3),
+    #"carbon_NEXAFS_reverse":  (350, 297, -1.45, 282, -0.3, 250, -1.45),
 }
 
 #energies_eliot = get_energies(edge=[380, 397, 407, 440], ratios=[2, 0.2, 2], frames=112)
