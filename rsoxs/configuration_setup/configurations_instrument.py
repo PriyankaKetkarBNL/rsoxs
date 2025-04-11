@@ -184,7 +184,7 @@ default_configurations = {
         {"motor": izero_y, "position": -31, "order": 0},
         {"motor": Det_W, "position": position_CameraWAXS_OutOfBeamPath, "order": 1},
         {"motor": BeamStopW, "position": position_BeamstopWAXS_InBeamPath, "order": 1},
-        {"motor": slitsc, "position": -0.05, "order": 2},
+        {"motor": slitsc, "position": -1.05, "order": 2}, #-0.05
     ],
 
     "WAXS": [
@@ -227,7 +227,7 @@ default_configurations = {
         {"motor": izero_y, "position": -31, "order": 0},
         {"motor": Det_W, "position": position_CameraWAXS_InBeamPath, "order": 1},
         {"motor": BeamStopW, "position": position_BeamstopWAXS_InBeamPath, "order": 1},
-        {"motor": slitsc, "position": -0.05, "order": 2},
+        {"motor": slitsc, "position": -1.05, "order": 2},
     ],
 
     "WAXSNEXAFS_Liquids": [

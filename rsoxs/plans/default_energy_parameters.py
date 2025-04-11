@@ -22,6 +22,7 @@ energyListParameters = {
     "carbon_NEXAFS_WSU":  (270, 278, 1, 283, 0.5, 291.5, 0.05, 300, 0.5, 330, 1, 350, 4), ## WSU NEXAFS for Brian Collins group
     "carbon_NEXAFS_ReallySlow":  (250, 282, 0.3, 297, 0.07, 350, 0.3),
     "carbon_NEXAFS_Slow":  (250, 282, 0.3, 297, 0.1, 350, 0.3),
+    "carbon_NEXAFS_Narrow": (282, 297, 0.3),
     #"carbon_NEXAFS_reverse":  (350, 297, -1.45, 282, -0.3, 250, -1.45),
 
 
