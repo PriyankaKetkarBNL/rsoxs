@@ -218,6 +218,12 @@ class RSOXSGreatEyesDetector(SingleTriggerV33, GreatEyesDetector):
             self.setup_cam()
         return super().trigger(*args, **kwargs)
 
+    def describe(self):
+        res = super().describe()
+        update_chunks = dict(chunks=(1, -1, -1, -1))
+        res['Wide Angle CCD Detector_image'].update(update_chunks)
+        return res
+
     def skinnystage(self, *args, **kwargs):
         yield Msg("stage", super())
 
