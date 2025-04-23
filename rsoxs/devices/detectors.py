@@ -47,8 +47,8 @@ class GreatEyesDetCamWithVersions(GreatEyesDetectorCam):
             EpicsSignalRO,
             (
                 ("array_size_z", "ArraySizeZ_RBV"),
-                ("array_size_y", "ArraySizeY_RBV"),
-                ("array_size_x", "ArraySizeX_RBV"),
+                ("array_size_x", "ArraySizeY_RBV"),
+                ("array_size_y", "ArraySizeX_RBV"),
             ),
             auto_monitor=True,
         ),
