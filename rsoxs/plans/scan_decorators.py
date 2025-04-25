@@ -2,7 +2,7 @@ from nbs_bl.plans.scan_decorators import wrap_metadata
 from nbs_bl.utils import merge_func
 import bluesky.plan_stubs as bps
 from functools import partial
-from nbs_bl.hw import shutter_control, shutter_open_time, waxs_det, en
+from nbs_bl.hw import shutter_control, shutter_open_time, shutter_y, waxs_det, en
 from bluesky.preprocessors import finalize_wrapper
 
 from nbs_bl.beamline import GLOBAL_BEAMLINE
@@ -12,6 +12,8 @@ from .per_steps import take_exposure_corrected_reading, one_nd_sticky_exp_step, 
 def post_scan_hardware_reset():
     ## Make sure the shutter is closed, and the scanlock if off after a scan, even if it errors out
     yield from bps.mv(en.scanlock, 0)
+    ## 20250403 - Temporary changes because shutter does not work
+    # yield from bps.mv(shutter_y, 25) ## Shutter mechanism physically blocks beam rather than the piezo portion
     yield from bps.mv(shutter_control, 0)
 
 
@@ -92,9 +94,13 @@ def rsoxs_waxs_decorator(func):
                 )
         else:
             if open_shutter:
+                ## 20250403 - Temporary changes because shutter does not work
+                #yield from bps.mv(shutter_y, 26) ## Shutter mechanism physically lets beam pass rather than the piezo portion
                 yield from bps.mv(shutter_control, 1)  # open the shutter for the run
             else:
-                yield from bps.mv(shutter_control, 0)  # close the shutter for the run
+                ## 20250403 - Temporary changes because shutter does not work
+                #yield from bps.mv(shutter_y, 25) ## Shutter mechanism physically blocks beam rather than the piezo portion
+                yield from bps.mv(shutter_control, 0)  # close the shutter for the run    
             return (
                 yield from finalize_wrapper(
                     plan=func(*args, extra_dets=extra_dets, dwell=dwell, **kwargs),

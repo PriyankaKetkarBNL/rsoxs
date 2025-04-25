@@ -108,17 +108,17 @@ default_configurations = {
 
 
     "MirrorConfiguration_RSoXS": [
-        {"motor": mir1.x, "position": -0.55, "order": 0},
+        {"motor": mir1.x, "position": 1, "order": 0},
         {"motor": mir1.y, "position": -18, "order": 1},
         {"motor": mir1.z, "position": 0, "order": 2},
-        {"motor": mir1.pitch, "position": 0.45, "order": 3},
+        {"motor": mir1.pitch, "position": 0.5, "order": 3},
         {"motor": mir1.roll, "position": 0, "order": 4},
         {"motor": mir1.yaw, "position": 0, "order": 5},
 
-        {"motor": mir3.x, "position": 21.8, "order": 0},
+        {"motor": mir3.x, "position": 24.05, "order": 0},
         {"motor": mir3.y, "position": 18, "order": 1},
         {"motor": mir3.z, "position": 0, "order": 2},
-        {"motor": mir3.pitch, "position": 7.91, "order": 3},
+        {"motor": mir3.pitch, "position": 7.78, "order": 3},
         {"motor": mir3.roll, "position": 0, "order": 4},
         {"motor": mir3.yaw, "position": 0, "order": 5},
     ],
@@ -128,7 +128,7 @@ default_configurations = {
         {"motor": en, "position": 150, "order": 0},
         {"motor": slitsc, "position": -0.01, "order": 0},
         {"motor": izero_y, "position": position_RSoXSDiagnosticModule_OutOfBeamPath, "order": 0},
-        {"motor": shutter_y, "position": 2.2, "order": 0},
+        {"motor": shutter_y, "position": 2.2, "order": 0},#{"motor": shutter_y, "position": 25, "order": 0}, #{"motor": shutter_y, "position": 2.2, "order": 0},
         {"motor": slits1.vsize, "position": 0.02, "order": 0},
         {"motor": slits1.vcenter, "position": -0.55, "order": 0},
         {"motor": slits1.hsize, "position": 0.04, "order": 0},
@@ -164,6 +164,27 @@ default_configurations = {
         {"motor": Det_W, "position": position_CameraWAXS_OutOfBeamPath, "order": 1},
         {"motor": BeamStopW, "position": position_BeamstopWAXS_InBeamPath, "order": 1},
         {"motor": slitsc, "position": -3.05, "order": 2},
+    ],
+
+    "WAXSNEXAFS_LowFlux": [
+        {"motor": TEMZ, "position": 1, "order": 0},
+        {"motor": slits1.vsize, "position": 0.02, "order": 0},
+        {"motor": slits1.vcenter, "position": -0.55, "order": 0},
+        {"motor": slits1.hsize, "position": 0.04, "order": 0},
+        {"motor": slits1.hcenter, "position": -0.18, "order": 0},
+        {"motor": slits2.vsize, "position":  0.21, "order": 0},
+        {"motor": slits2.vcenter, "position": -0.873, "order": 0},
+        {"motor": slits2.hsize, "position": 0.4, "order": 0},
+        {"motor": slits2.hcenter, "position": -0.1, "order": 0},
+        {"motor": slits3.vsize, "position": 1, "order": 0},
+        {"motor": slits3.vcenter, "position": -0.45, "order": 0},
+        {"motor": slits3.hsize, "position": 1, "order": 0},
+        {"motor": slits3.hcenter, "position": 0.15, "order": 0},
+        {"motor": shutter_y, "position": 2.2, "order": 0},
+        {"motor": izero_y, "position": -31, "order": 0},
+        {"motor": Det_W, "position": position_CameraWAXS_OutOfBeamPath, "order": 1},
+        {"motor": BeamStopW, "position": position_BeamstopWAXS_InBeamPath, "order": 1},
+        {"motor": slitsc, "position": -1.05, "order": 2}, #-0.05
     ],
 
     "WAXS": [
@@ -206,7 +227,7 @@ default_configurations = {
         {"motor": izero_y, "position": -31, "order": 0},
         {"motor": Det_W, "position": position_CameraWAXS_InBeamPath, "order": 1},
         {"motor": BeamStopW, "position": position_BeamstopWAXS_InBeamPath, "order": 1},
-        {"motor": slitsc, "position": -0.05, "order": 2},
+        {"motor": slitsc, "position": -1.05, "order": 2},
     ],
 
     "WAXSNEXAFS_Liquids": [

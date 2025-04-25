@@ -11,7 +11,7 @@ from bluesky.plan_stubs import (
     create,
     save,
 )
-from nbs_bl.hw import shutter_open_time
+from nbs_bl.hw import shutter_open_time, shutter_y
 from bluesky.utils import Msg, short_uid as _short_uid
 
 
