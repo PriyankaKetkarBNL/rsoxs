@@ -29,7 +29,7 @@ from nbs_bl.hw import (
     Beamstop_SAXS,
     BeamStopS,
     Det_S,
-    dm7,
+    #dm7,
 )
 
 ## An alternative way to load devices is:

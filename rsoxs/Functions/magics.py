@@ -15,7 +15,7 @@ from nbs_bl.hw import (
     Det_W,
     Det_S,
     shutter_y,
-    Izero_ds,
+    #Izero_ds,
     izero_y,
     sam_viewer,
 )
