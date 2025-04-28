@@ -42,6 +42,9 @@ class GreatEyesDetCamWithVersions(GreatEyesDetectorCam):
     adcore_version = C(EpicsSignalRO, "ADCoreVersion_RBV")
     driver_version = C(EpicsSignalRO, "DriverVersion_RBV")
     wait_for_plugins = C(EpicsSignal, "WaitForPlugins", string=True, kind="config")
+    # NOTE: We swap the array size x and y to match the fact that the detector plugin chain has always had a transform
+    # that swaps the x and y dimensions. This is a bit of a hack, but it is more consistent with the detector use.
+    # That is: XF:07ID1-ES:1{GE:2}image1:NDArrayPort set to TRANS1 and XF:07ID1-ES:1{GE:2}image1:EnableCallback enabled.
     array_size = DDC(
         ad_group(
             EpicsSignalRO,
