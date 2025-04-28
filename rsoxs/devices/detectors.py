@@ -42,13 +42,16 @@ class GreatEyesDetCamWithVersions(GreatEyesDetectorCam):
     adcore_version = C(EpicsSignalRO, "ADCoreVersion_RBV")
     driver_version = C(EpicsSignalRO, "DriverVersion_RBV")
     wait_for_plugins = C(EpicsSignal, "WaitForPlugins", string=True, kind="config")
+    # NOTE: We swap the array size x and y to match the fact that the detector plugin chain has always had a transform
+    # that swaps the x and y dimensions. This is a bit of a hack, but it is more consistent with the detector use.
+    # That is: XF:07ID1-ES:1{GE:2}image1:NDArrayPort set to TRANS1 and XF:07ID1-ES:1{GE:2}image1:EnableCallback enabled.
     array_size = DDC(
         ad_group(
             EpicsSignalRO,
             (
                 ("array_size_z", "ArraySizeZ_RBV"),
-                ("array_size_y", "ArraySizeY_RBV"),
-                ("array_size_x", "ArraySizeX_RBV"),
+                ("array_size_x", "ArraySizeY_RBV"),
+                ("array_size_y", "ArraySizeX_RBV"),
             ),
             auto_monitor=True,
         ),
@@ -217,6 +220,12 @@ class RSOXSGreatEyesDetector(SingleTriggerV33, GreatEyesDetector):
             print(f"Warning: It looks like the {self.name} restarted, putting in default values again")
             self.setup_cam()
         return super().trigger(*args, **kwargs)
+
+    def describe(self):
+        res = super().describe()
+        update_chunks = dict(chunks=(1, -1, -1))
+        res['Wide Angle CCD Detector_image'].update(update_chunks)
+        return res
 
     def skinnystage(self, *args, **kwargs):
         yield Msg("stage", super())
