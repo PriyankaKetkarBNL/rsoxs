@@ -1,3 +1,5 @@
+## TODO: update formatting when this issue/PR is merged: https://github.com/xraygui/nbs-bl/issues/1#issuecomment-2835813578
+## I might be able to do this in an automated function or using chatGPT
 
 ## This is intended to contain a revised set of default parameters that would be used after refactoring the codebase
 
