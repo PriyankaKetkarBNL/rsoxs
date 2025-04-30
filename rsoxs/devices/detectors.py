@@ -225,7 +225,8 @@ class RSOXSGreatEyesDetector(SingleTriggerV33, GreatEyesDetector):
         res = super().describe()
         updates = {}
         updates["dtype_str"] = "<u4"
-        # updates["chunks"] = (1, -1, -1) # TODO: How to do this at a plan level to ensure num dims correct
+        # This will only work if we are 100% confident that we will always have 4D data when using this 3D detector.
+        # updates["chunks"] = (1, 1, -1, -1) # TODO: How to do this at a plan level to ensure num dims correct
         res['Wide Angle CCD Detector_image'].update(updates)
         print(res)
         return res
