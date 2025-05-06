@@ -25,7 +25,7 @@ from nbs_bl.hw import (
     sam_X,
     TEMZ,
     mir4OLD,
-    dm7
+    #dm7
 )
 
 from ..HW.energy import mono_en, grating_to_1200

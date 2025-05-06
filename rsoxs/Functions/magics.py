@@ -15,7 +15,7 @@ from nbs_bl.hw import (
     Det_W,
     Det_S,
     shutter_y,
-    Izero_ds,
+    #Izero_ds,
     izero_y,
     sam_viewer,
 )
@@ -23,7 +23,6 @@ from nbs_bl.hw import (
 from rsoxs.configuration_setup.configurations_instrument import all_out #from .configurations import all_out
 from ..HW.detectors import (
     set_exposure,
-    # saxs_det,
     waxs_det,
     snapshot,
     exposure,
